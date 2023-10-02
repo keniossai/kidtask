@@ -18,6 +18,7 @@ class TaskResource extends JsonResource
             'task_id'=>$this->id,
             'task_title'=>$this->title,
             'task_description'=>$this->description,
+            'user_id'=>$this->user_id,
             'task_created_at'=>$this->created_at,
             'task_updated_at'=>$this->updated_at,
             'author'=> $this->whenLoaded('author', function(){

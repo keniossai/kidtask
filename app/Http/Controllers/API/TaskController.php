@@ -14,8 +14,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::with(['author'])->get();
-        return TaskResource::collection($tasks);
+        return TaskResource::collection(auth()->user()->tasks);
     }
 
     /**

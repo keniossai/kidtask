@@ -12,6 +12,8 @@ class UserController extends Controller
 {
     public function authenticate(LoginRequest $request)
     {
+        $request->authenticate();
+
         $user = Auth::user();
 
         $token = $user->createToken('token')->plainTextToken;
